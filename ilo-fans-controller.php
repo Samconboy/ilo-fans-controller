@@ -25,7 +25,7 @@ function get_presets() {
 function get_fans() {
 	global $ILO_HOST, $ILO_USERNAME, $ILO_PASSWORD;  // From config.inc.php
 
-	$curl_handle = curl_init("https://$ILO_HOST/redfish/v1/chassis/1/Thermal");
+	$curl_handle = curl_init("https://$ILO_HOST/redfish/v1/chassis/1/Thermal/");
 
 	curl_setopt($curl_handle, CURLOPT_USERPWD, "$ILO_USERNAME:$ILO_PASSWORD");  // Authentication (Basic)
 
@@ -493,6 +493,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 				<p x-show="$store.app.requestTime" class="text-sm dark:text-gray-750 text-gray-350 select-none font-mono">
 					Executed in <span x-text="$store.app.requestTime >= 1000 ? ($store.app.requestTime / 1000).toFixed(2) + 's' : $store.app.requestTime + 'ms'"></span>
 				</p>
+			</div>
+
+			<div class="flex justify-center mt-7">
+				<a href="./fan-auto.php" class="outline-button px-3 py-1.5 text-sm">Auto Control &rarr;</a>
 			</div>
 		</main>
 

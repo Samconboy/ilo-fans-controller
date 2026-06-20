@@ -1,0 +1,12 @@
+[Unit]
+Description=iLO Fan Controller
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /opt/ilo-fan-controller/fan_controller.py
+Restart=always
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target

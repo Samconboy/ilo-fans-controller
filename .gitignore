@@ -4,5 +4,8 @@
 # Testing Presets file
 presets.json
 
+# Runtime fan curve config
+fan_curve.json
+
 # Tailwind Config file (nothing special, used for VSCode Tailwind CSS IntelliSense)
 tailwind.config.js
